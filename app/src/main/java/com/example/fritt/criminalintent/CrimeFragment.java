@@ -46,10 +46,10 @@ public class CrimeFragment extends Fragment {
         mCrime=CrimeLab.get(getActivity()).getCrime(crimeId);
 
 
-        position= CrimeLab.get(getActivity()).getIndex(crimeId);
-        Intent intent=new Intent();
-        intent.putExtra(ARG_CRIME_ID,position);
-        returnResult(intent);
+//        position= CrimeLab.get(getActivity()).getIndex(crimeId);
+//        Intent intent=new Intent();
+//        intent.putExtra(ARG_CRIME_ID,position);
+//        returnResult(intent);
 
 
 

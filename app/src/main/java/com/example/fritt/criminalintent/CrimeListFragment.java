@@ -41,8 +41,8 @@ public class CrimeListFragment extends Fragment {
             mAdapter = new CrimeAdapter(crimes);
             mCrimeRecyclerView.setAdapter(mAdapter);
         }else{
-          //  mAdapter.notifyDataSetChanged();
-            mAdapter.notifyItemChanged(position);
+           mAdapter.notifyDataSetChanged();
+           // mAdapter.notifyItemChanged(position);
         }
 
     }
@@ -74,9 +74,9 @@ public class CrimeListFragment extends Fragment {
         @Override
         public void onClick(View v) {
             Toast.makeText(getActivity(), mCrime.getTitle()+" clicked", Toast.LENGTH_SHORT).show();
-            Intent intent=CrimeActivity.newIntent(getActivity(),mCrime.getId());
-            //startActivity(intent);
-            startActivityForResult(intent,REQUEST_CRIME);
+            Intent intent=CrimePagerActivity.newIntent(getActivity(),mCrime.getId());
+            startActivity(intent);
+            //startActivityForResult(intent,REQUEST_CRIME);
         }
     }
     @Override
