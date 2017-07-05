@@ -14,6 +14,7 @@ import java.util.UUID;
 public class CrimeLab {
     private static CrimeLab sCrimeLab;
     private List<Crime> mCrimes;
+    private Crime mCrime;
 
     private CrimeLab(Context context) {
         mCrimes = new ArrayList<>();
@@ -42,5 +43,13 @@ public class CrimeLab {
                 return crime;
         }
         return null;
+    }
+    public int getIndex(UUID id){
+        for (Crime crime : mCrimes) {
+            if (crime.getId().equals(id))
+                return mCrimes.indexOf(crime);
+        }
+        return  0;
+
     }
 }
