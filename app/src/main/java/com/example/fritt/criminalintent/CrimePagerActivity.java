@@ -2,6 +2,7 @@ package com.example.fritt.criminalintent;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.RectF;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
@@ -13,11 +14,12 @@ import android.os.Bundle;
 import java.util.List;
 import java.util.UUID;
 
-public class CrimePagerActivity extends FragmentActivity {
+public class CrimePagerActivity extends AppCompatActivity{
 
     private ViewPager mViewPager;
     private List<Crime> mCrimes;
     public static final String EXTRA_CRIME_ID="com.example.fritt.criminalintent.crime.id";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +30,7 @@ public class CrimePagerActivity extends FragmentActivity {
 
         mViewPager=(ViewPager)findViewById(R.id.activity_crime_pager_view_pager);
         mCrimes=CrimeLab.get(this).getCrimes();
+
         FragmentManager fragmentManager=getSupportFragmentManager();
         mViewPager.setAdapter(new FragmentStatePagerAdapter(fragmentManager) {
             @Override
